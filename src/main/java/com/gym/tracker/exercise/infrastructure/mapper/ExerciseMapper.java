@@ -1,6 +1,7 @@
 package com.gym.tracker.exercise.infrastructure.mapper;
 
 import com.gym.tracker.exercise.domain.Exercise;
+import com.gym.tracker.exercise.infrastructure.dto.ExerciseDTO;
 import com.gym.tracker.exercise.infrastructure.entity.ExerciseEntity;
 import com.gym.tracker.session.infrastructure.entity.SessionEntity;
 import org.mapstruct.Builder;
@@ -16,4 +17,8 @@ public interface ExerciseMapper {
 
     @Mapping(target = "session", source = "session")
     ExerciseEntity toExerciseEntity(Exercise exercise, SessionEntity sessionEntity);
+
+    Exercise toExercise(ExerciseDTO exerciseDTO);
+
+    ExerciseDTO toExerciseDTO(Exercise exercise);
 }

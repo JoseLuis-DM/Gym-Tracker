@@ -1,6 +1,7 @@
 package com.gym.tracker.session.infrastructure.mapper;
 
 import com.gym.tracker.session.domain.Session;
+import com.gym.tracker.session.infrastructure.dto.SessionDTO;
 import com.gym.tracker.session.infrastructure.entity.SessionEntity;
 import com.gym.tracker.user.infrastructure.entity.UserEntity;
 import org.mapstruct.Builder;
@@ -16,4 +17,8 @@ public interface SessionMapper {
 
     @Mapping(target = "user", source = "user")
     SessionEntity toSessionEntity(Session session, UserEntity userEntity);
+
+    Session toSession(SessionDTO sessionDTO);
+
+    SessionDTO toSessionDTO(Session session);
 }
